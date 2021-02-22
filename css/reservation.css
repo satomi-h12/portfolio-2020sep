@@ -1,0 +1,425 @@
+/* 
+#1e6a5c
+#038c73
+#68cbcc
+#ebe8e6
+#d1cdc9
+*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sutro, serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+h2{
+    color: #1e6a5c;
+}
+
+h3{
+    color: #038c73;
+}
+
+/* header area */
+header{
+    height: 700px;
+    width: 100%;
+    background-image: url(../image/res-top2.jpg);
+    background-size: cover;
+    background-position: center top;
+    animation-name: slider;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+@keyframes slider{
+    0%{
+        background-image: url(../image/res-top2.jpg);
+    }
+    25%{
+        background-image: url(../image/res-top1.jpg);
+    }
+    100%{
+        background-image: url(../image/res-top3.jpg);
+    }
+}
+
+.menu{
+    height: 100px;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-left: 100px;
+}
+
+.logo img{
+    height: 100px;
+    width: 100px;
+    transition-duration: 1s;
+}
+
+.logo img:hover{
+    height: 105%;
+    width: 105%;
+}
+
+nav{
+    width: 100px;
+    height: 100px;
+    float: right;
+    margin-right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.gnav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gnav > li{
+    list-style: none;
+}
+
+.gnav > li  a img{
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    width: 60px;
+}
+
+.gnav li ul li{
+    list-style: none;
+    position: absolute;
+    display: block;
+    width: 100px;
+    background-color: #ebe8e6;
+    height: 0;
+    overflow: hidden;
+    transition: 1.5s;
+}
+
+nav li a{
+    text-decoration: none;
+    color: #1e6a5c;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#home{
+    top: 100px;
+    left: -1px;
+}
+
+#home:hover > a{
+    background-color: #68cbcc;
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+#about{
+    top: 140px;
+    left: -1px;
+}
+
+#about:hover > a{
+    background-color: #68cbcc;
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+#service{
+    top: 180px;
+    left: -1px;
+}
+
+#service:hover > a{
+    background-color: #68cbcc;
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+#reservation{
+    top: 220px;
+    left: -1px;
+}
+
+#reservation:hover> a{
+    background-color: #68cbcc;
+    color: white;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+nav:hover li > ul >li{
+    height: 40px;
+    width: 100px;
+    border: 1px solid #d1cdc9;
+    overflow: visible;
+}
+
+main{
+    height: 600px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+main h1{
+    margin-bottom: 85px;
+    flex-shrink: 0;
+    text-align: center;
+    text-shadow: 2px 2px 3px #d1cdc9;
+}
+
+
+/* reservation section */
+.reservation{
+    height: 600px;
+}
+
+.reservation h2{
+    text-align: center;
+    margin: 40px 0;
+}
+
+.reservation form{
+    height: 450px;
+    background-color: #ebe8e6;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 60px 30px;
+    display: grid;
+    grid-template-areas:
+    'checkin checkin checkin'
+    'checkinbox checkinbox checkinbox'
+    'checkout checkout checkout'
+    'checkoutbox checkoutbox checkoutbox'
+    'room adult child'
+    'roombox adultbox childbox'
+    '. submit .';
+    row-gap: 10px;
+    column-gap: 10px;
+    box-shadow: 3px 3px 3px 3px #ebe8e6;
+}
+
+.reservation form label{
+    color: #1e6a5c;
+    padding: 10px 0;
+    height: 25px;
+}
+
+.reservation form input{
+    height: 50px;
+}
+
+.reservation form input[type=date]:hover,
+.reservation form input[type=number]:hover{
+    background-color: #d1cdc9;
+}
+
+.reservation form label[for=checkin]{
+    grid-area: checkin;
+}
+
+.reservation form input[id=checkin]{
+    grid-area: checkinbox;
+}
+
+.reservation form label[for=checkout]{
+    grid-area: checkout;
+}
+
+.reservation form input[id=checkout]{
+    grid-area: checkoutbox;
+}
+
+.reservation form label[for=room]{
+    grid-area: room;
+}
+
+.reservation form input[id=room]{
+    grid-area: roombox;
+}
+
+.reservation form label[for=adult]{
+    grid-area: adult;
+}
+
+.reservation form input[id=adult]{
+    grid-area: adultbox;
+}
+
+.reservation form label[for=child]{
+    grid-area: child;
+}
+
+.reservation form input[id=child]{
+    grid-area: childbox;
+}
+
+.reservation form input[type=submit]{
+    grid-area: submit;
+    background-color: #68cbcc;
+    color: #ebe8e6;
+    font-weight: 900;
+    font-size: 14px;
+    border: 1px solid #d1cdc9;
+    margin-top: 20px;
+}
+
+.reservation form input[type=submit]:hover{
+    color: #68cbcc;
+    background-color: white;
+    border: 1px solid #68cbcc;
+    border-radius: 10%;
+    font-size: 16px;
+}
+
+
+/* contact us section */
+.contact{
+    height: 550px;
+}
+
+.contact h2{
+    text-align: center;
+    margin: 40px 0;
+}
+
+.contentholder{
+    display: flex;
+    justify-content: center;
+}
+
+.imageholder{
+    padding: 5px 0 0;
+}
+
+.imageholder img{
+    height: 400px;
+}
+
+.textholder{
+    padding: 0 50px 0 50px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.textholder p{
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #68cbcc;
+}
+.textholder img{
+    height: 110px;
+    width: 110px;
+    margin: 10px auto;
+}
+
+
+/* footer */
+footer{
+    height: 150px;
+    width: 100%;
+    background-color: #d1cdc9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fab{
+    font-size: 50px;
+    color: #1e6a5c;
+    margin: 0 10px;
+}
+
+.fab:hover{
+    color: #038c73;
+    font-size: 60px;
+}
+
+.pagetop{
+    border: 1px solid #d1cdc9;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d1cdc9;
+    border-radius: 5px;
+}
+
+.pagetop:hover{
+    background-color: #ebe8e6;
+    border-radius: 5px;
+}
+
+.pagetop img{
+    height: 40px;
+}
+
+.pagetop p{
+    color: #1e6a5c;
+    font-size: 14px;
+}
+
+
+@media screen and (max-width: 1000px){
+    .reservation{
+        height: auto;
+    }
+    .reservation form{
+        height: auto;
+        grid-template-areas:
+        'checkin'
+        'checkinbox'
+        'checkout'
+        'checkoutbox'
+        'room'
+        'roombox'
+        'adult'
+        'adultbox'
+        'child'
+        'childbox'
+        'submit';
+    }
+}
+
+@media screen and (max-width: 900px){
+    .contact{
+        height: auto;
+    }
+    .contentholder{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .textholder{
+        text-align: center;
+    }
+}
